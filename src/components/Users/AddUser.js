@@ -10,9 +10,12 @@ const AddUser = () => {
 
   const addUserHandler = (event) => {
     event.preventDefault();
-    console.log(userName,userAge)
+    if((userName.length===0 || userAge.length===0) || +userAge<=0){
+      return
+    }
     setUserName('')
     setUserAge('')
+    console.log(userName,userAge)
   };
 
   const nameChangeHandler = (event) => {
